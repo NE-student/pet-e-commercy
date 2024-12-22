@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./gateway:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./auth-service:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  product-service:
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./product-service:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  cart-service:
+    build:
+      context: ./cart-service
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./cart-service:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  order-service:
+    build:
+      context: ./order-service
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./order-service:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  payment-service:
+    build:
+      context: ./payment-service
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./payment-service:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
